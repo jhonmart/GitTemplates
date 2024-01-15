@@ -1,0 +1,32 @@
+name: Deploy project
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: 🟢 Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: 📦 Install dependencies
+        run: yarn install
+
+      - name: 📚 Build project
+        run: yarn generate
+
+      - name: 📋 Create not found page
+        run: cp docs/index.html docs/404.html
+
+      - name: 🚀 Deploy
+        uses: test-room-7/action-update-file@v1
+        with:
+          branch: demo
+          file-path: docs/**/*
+          commit-msg: deploy system
+          github-token: ${{ secrets.GITHUB_TOKEN }}
