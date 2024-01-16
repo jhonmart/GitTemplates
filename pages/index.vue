@@ -195,14 +195,16 @@ export default {
                 if (value === -1) value = `Sem peso`;
                 else if (value === -2) value = `~"spike"`;
               }
-              childValue += `${childField.icon || ""} **${childField.name}** ${value || childField.value || childField.default}<br>`.replaceAll("\n", " ");
+              childValue += `${childField.icon || ""
+                } **${childField.name}** ${value || childField.value || childField.default
+                }<br>`.replaceAll("\n", "<br> ");
             }
           }
 
-          base += `${childValue || field.default}`.replaceAll("\n", " ") + `|\n`;
+          base += `${childValue || field.default}`.replaceAll("\n", "<br> ") + `|\n`;
         } else {
           if (field.icon) base += `${field.icon} `;
-          base += `${field.value || field.default}`.replaceAll("\n", " ") + `|\n`;
+          base += `${field.value || field.default}`.replaceAll("\n", "<br> ") + `|\n`;
         }
       };
       return base;
