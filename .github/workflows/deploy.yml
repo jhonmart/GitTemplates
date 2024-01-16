@@ -33,10 +33,9 @@ jobs:
       - name: 📋 Create not found page
         run: cp docs/index.html docs/404.html
 
-      - name: 🚀 Deploy
+      - name: 🚀 Deploy to GitHub Pages
         uses: test-room-7/action-update-file@v1
         with:
-          branch: demo
-          file-path: docs/**/*
+          file-path: docs
           commit-msg: deploy system
           github-token: ${{ secrets.GITHUB_TOKEN }}
