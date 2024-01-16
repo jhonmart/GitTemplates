@@ -1,1 +1,0 @@
-window.__NUXT__=(function(a){return {staticAssetsBase:"\u002FGitTemplates\u002Fpublic\u002Fstatic\u002F1705363556",layout:"default",error:a,serverRendered:true,routePath:"\u002F",config:{_app:{basePath:"\u002FGitTemplates\u002F",assetsPath:"\u002FGitTemplates\u002Fpublic\u002F",cdnURL:a}}}}(null));

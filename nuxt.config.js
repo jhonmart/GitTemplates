@@ -53,7 +53,6 @@ export default {
   },
 
   generate: {
-    dir: "docs",
     fallback: "404.html"
   },
 
